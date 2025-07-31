@@ -16,7 +16,7 @@
         <div class="row">
             <h1 class="game-name">ATSUM</h1>
             <h2 class="game-difficulty">{{$dificuldade}}</h2>
-            <img src="{{'https://blog.infnet.com.br/wp-content/uploads/sites/6/2023/06/ruby-programming-language.png'}}" alt="Imagem do Jogo">
+            <img src="{{'classic.image'}}" alt="Imagem do Jogo">
         </div>
     </div>
 </body>
