@@ -27,7 +27,9 @@
     text-align: center;
 }
 
-img {
+.img-portrait {
+    display: block;
+    margin: 0 auto;
     max-width: 90%;
     height: auto;
     border-radius: 10px;

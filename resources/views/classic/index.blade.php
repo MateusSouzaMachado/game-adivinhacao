@@ -16,8 +16,9 @@
         <div class="row">
             <h1 class="game-name">ATSUM</h1>
             <h2 class="game-difficulty">{{$dificuldade}}</h2>
-            <img src="{{'classic.image'}}" alt="Imagem do Jogo">
         </div>
     </div>
+
+    <img id="guess-image" class="img-portrait" alt="Imagem a ser adivinhada"/>
 </body>
 </html>
