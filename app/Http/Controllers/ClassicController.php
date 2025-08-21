@@ -26,7 +26,7 @@ class ClassicController extends Controller
       $tentativas = $request ->attempts ?? 0;
       $imageId = $request->tecnologia;
 
-      $tecnologia = Tecnologia::find($imagemId);
+      $tecnologia = Tecnologia::find($imageId);
 
       $caminho = storage_path("app/public/" . $tecnologia->caminho_logo);
       if (!file_exists($caminho)){

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const appDiv = document.getElementById("app");
-const dificuldade = appDiv.datatest.dificuldade;
+const dificuldade = appDiv.dataset.dificuldade;
 
 const imageDiv = document.getElementById("image");
 const imageId = imageDiv.dataset.image;
