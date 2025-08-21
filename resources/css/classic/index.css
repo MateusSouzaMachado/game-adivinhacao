@@ -36,3 +36,63 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
 }
+
+.container-vidas {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.container-vidas span {
+    font-size: 2rem; /* cafés maiores */
+    filter: drop-shadow(0 0 6px #ff8800); /* glow */
+    transition: transform 0.2s ease;
+}
+
+.container-vidas span:hover {
+    transform: scale(1.3) rotate(-10deg);
+    filter: drop-shadow(0 0 10px #ffaa33);
+}
+.button {
+    background: linear-gradient(135deg, #ff7b00, #ff3c00); /* degrade chamativo */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1px;
+    display: block;
+    margin: 12px auto;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff9d4d, #ff5e42);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.select select {
+    font-size: 1rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid #ff7b00;
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 12px auto;
+}
+
+.select select:hover {
+    border-color: #ff3c00;
+    box-shadow: 0 4px 14px rgba(255, 80, 0, 0.6);
+}

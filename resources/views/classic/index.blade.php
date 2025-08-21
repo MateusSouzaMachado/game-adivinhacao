@@ -12,6 +12,9 @@
     
 </head>
 <body style="background-color: #303F9F">
+    <div id="app" data-dificuldade="{{ $dificuldade }}"></div>
+    <div id="image" data-image="{{ $tecnologia }}"></div>
+
     <div class="container">
         <div class="row">
             <h1 class="game-name">ATSUM</h1>
@@ -20,5 +23,20 @@
     </div>
 
     <img id="guess-image" class="img-portrait" alt="Imagem a ser adivinhada"/>
+    <div class="container-vidas">
+        <span>☕</span>
+        <span>☕</span>
+        <span>☕</span>
+        <span>☕</span>
+        <span>☕</span>
+    </div>
+    <div class="select">
+    <select >
+        @foreach ($tecnologias as $tec)
+            <option value="{{ $tec->id }}">{{ $tec->nome }}</option>
+        @endforeach    
+    </select>
+    </div>
+    <button id="guess-button" class="button">ADIVINHAR</button>
 </body>
 </html>
