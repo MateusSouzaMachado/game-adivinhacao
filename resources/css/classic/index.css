@@ -92,6 +92,10 @@
     margin: 12px auto;
 }
 
+.perdida{
+    display: none !important;
+}
+
 .select select:hover {
     border-color: #ff3c00;
     box-shadow: 0 4px 14px rgba(255, 80, 0, 0.6);

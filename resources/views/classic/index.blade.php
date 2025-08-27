@@ -31,9 +31,9 @@
         <span>☕</span>
     </div>
     <div class="select">
-    <select >
+    <select id ="tecnologia-select">
         @foreach ($tecnologias as $tec)
-            <option value="{{ $tec->id }}">{{ $tec->nome }}</option>
+            <option value="{{ $tec->codigo }}">{{ $tec->nome }}</option>
         @endforeach    
     </select>
     </div>
