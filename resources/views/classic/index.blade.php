@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATSUM</title>
+    <title>CODIZ</title>
     @vite("resources/css/classic/index.css")
     @vite("resources/js/classic/index.js")
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 
     <div class="container">
         <div class="row">
-            <h1 class="game-name">ATSUM</h1>
+            <h1 class="game-name">Codiz</h1>
             <h2 class="game-difficulty">{{$dificuldade}}</h2>
         </div>
     </div>

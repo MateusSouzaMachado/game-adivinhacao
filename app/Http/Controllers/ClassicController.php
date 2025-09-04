@@ -48,14 +48,32 @@ class ClassicController extends Controller
         default => imagecreatefromjpeg($caminho),
       };
 
+      
       //PIXELIZAÇÃO - NIVEL 1
       $largura = imagesx($imagemOriginal);
       $altura = imagesy($imagemOriginal);
 
-      $fatorPixelização = ((5 + $tentativas) /100) - 0.002;
+    
 
-      $novaLargura = max(1, intval($largura * $fatorPixelização));
-      $novaAltura = max(1,intval($altura * $fatorPixelização));
+      $fatorPixelizacaoBase = 0;
+
+      switch ($dificuldade) {
+        case 'easy':
+          $fatorPixelizacaoBase = 15;
+          break;
+        case 'medium':
+          $fatorPixelizacaoBase = 5;
+          break;
+        case 'hard':  
+        default:
+          $fatorPixelizacaoBase = 2.5;
+          break;
+      }
+
+      $fatorPixelizacao = (($fatorPixelizacaoBase + $tentativas) / 100) - 0.002;
+
+      $novaLargura = max(1, intval($largura * $fatorPixelizacao));
+      $novaAltura = max(1,intval($altura * $fatorPixelizacao));
 
       $imagemPequena = imagecreatetruecolor($novaLargura, $novaAltura);
       imagecopyresized(
@@ -77,30 +95,30 @@ class ClassicController extends Controller
         $novaAltura,
         $novaLargura
       );
-
+    
       //RUIDO - NIVEL 2
-      $tamanhoRuido = ((5 - $tentativas) * 10) / 2;
-      for($i = 0; $i < 500; $i++){
-        $x = rand(0, $largura - $tamanhoRuido);
-        $y = rand(0, $altura - $tamanhoRuido);
-        $cor = imagecolorallocate(
-          $imagemFinal,
-          rand(0, 255),
-          rand(0, 255),
-          rand(0, 255)
-        );
+      // $tamanhoRuido = ((5 - $tentativas) * 10) / 2;
+      // for($i = 0; $i < 500; $i++){
+      //   $x = rand(0, $largura - $tamanhoRuido);
+      //   $y = rand(0, $altura - $tamanhoRuido);
+      //   $cor = imagecolorallocate(
+      //     $imagemFinal,
+      //     rand(0, 255),
+      //     rand(0, 255),
+      //     rand(0, 255)
+      //   );
 
-        imagefilledrectangle(
-          $imagemFinal,
-          $x,
-          $y,
-          $x + $tamanhoRuido,
-          $y + $tamanhoRuido,
-          $cor
-        );
-      }
+      //   imagefilledrectangle(
+      //     $imagemFinal,
+      //     $x,
+      //     $y,
+      //     $x + $tamanhoRuido,
+      //     $y + $tamanhoRuido,
+      //     $cor
+      //   );
+      // }
 
-      //PRETO E BRANCO - NIVEL 3
+      // PRETO E BRANCO - NIVEL 3
       imagefilter($imagemFinal, IMG_FILTER_GRAYSCALE);
     
 
@@ -122,5 +140,5 @@ class ClassicController extends Controller
         "image" => $base64,
         'codigo'=> $tecnologia->codigo,
       ]);
-    }
+     }
 }
